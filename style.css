@@ -1,0 +1,293 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Kalam:wght@300;400;700&display=swap');
+
+.tracker {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #2e2e2e;
+}
+
+ h2 {
+    text-align: center;
+    color: #ffffff;
+}
+h1{
+    text-align: center;
+    color: tomato;
+    font-size: 2rem;
+    font-family: "Kalam";
+  font-weight: 700;
+  font-style: normal;
+}
+h3{
+    text-align: left;
+    font-size: 2rem;
+    color: wheat;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar div {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #827e7ec9;
+    border-radius: 5px;
+    margin: 2px;
+    text-align: center;
+    background-color: #3e3e3e;
+}
+
+.calendar .header {
+    font-weight: bold;
+    background-color: #b8b8b8;
+    color: #000;
+    font-size: large;
+}
+
+.calendar .day {
+    cursor: pointer;
+}
+
+.calendar .day.completed {
+    background-color: #89d98c;
+    font-size: 1.5rem;
+    font-family: "Kalam";
+  font-weight: 700;
+  font-style: normal;
+  color: #2c2c2c;
+}
+
+.calendar .day.not-studied {
+    background-color: #f44336;
+    font-size: 1.1rem;
+    font-family: "Kalam";
+  font-weight: 700;
+  font-style: normal;
+
+  color: #2c2c2c;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #555;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: #333;
+    cursor: not-allowed;
+}
+
+/* focus plan tracker */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #555;
+    color: #ffffff;
+}
+
+ul {
+    margin: 10px;
+    padding: 10px;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.checklist input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.schedule {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #2e2e2e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .calendar {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .calendar div {
+        height: 80px;
+    }
+
+    .pagination button {
+        padding: 8px 16px;
+        margin: 0 3px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .calendar div {
+        height: 60px;
+    }
+
+    .pagination button {
+        padding: 6px 12px;
+        margin: 2px 2px;
+    }
+
+    table, th, td {
+        font-size: 12px;
+    }
+}
+
+.customCheckBoxHolder {
+    margin: 5px;
+    display: flex;
+}
+
+.customCheckBox {
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    padding: 2px 8px;
+    background-color: rgba(0, 0, 0, 0.16);
+    border-radius: 0px;
+    color: rgba(255, 255, 255, 0.7);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 300ms;
+    transition-property: color, background-color, box-shadow;
+    display: flex;
+    height: 32px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px 1px 1px 0px;
+    outline: none;
+    justify-content: center;
+    min-width: 55px;
+}
+
+.customCheckBox:hover {
+    background-color: #2c2c2c;
+    color: rgb(104, 252, 109);
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+}
+
+.customCheckBox .inner {
+    font-size: 1.1rem;
+    font-family: "Caveat";
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+    pointer-events: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 300ms;
+    transition-property: transform;
+    transform: translateY(0px);
+}
+
+.customCheckBox:hover .inner {
+    transform: translateY(-2px);
+}
+
+/* Multiple Checkboxes can be chained together for a radio input */
+.customCheckBoxWrapper:first-of-type .customCheckBox {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-right: 0px;
+}
+
+.customCheckBoxWrapper:last-of-type .customCheckBox {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 0px;
+}
+
+.customCheckBoxInput {
+    display: none;
+}
+
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox {
+    background-color: #2d6737;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+}
+
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox .inner {
+    transform: translateY(-2px);
+}
+
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox:hover {
+    background-color: #34723f;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.15) 0px 3px 6px 2px;
+}
+
+.customCheckBoxWrapper .customCheckBox:hover .inner {
+    transform: translateY(-2px);
+}
+
+/* space */
+.spacex{
+    height: 10px;
+    background-color:rgba(216, 191, 216, 0.827) ;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px gray solid;
+}
+.line{
+    height: 1px;
+    margin: auto;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 20px;
+}
+
